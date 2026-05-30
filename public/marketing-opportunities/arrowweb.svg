@@ -1,0 +1,44 @@
+<svg
+  viewBox="0 0 1200 800"
+  xmlns="http://www.w3.org/2000/svg"
+  fill="none"
+>
+
+  <!-- Big looping flight path -->
+  <path
+    d="
+      M980 40
+      C1180 120 1220 300 1110 420
+      C980 560 1090 690 1180 760
+    "
+    stroke="#D8D8D8"
+    stroke-width="5"
+    stroke-linecap="round"
+    stroke-dasharray="6 10"
+  />
+
+  <!-- Top arc -->
+  <path
+    d="
+      M180 140
+      C420 60 760 170 980 40
+    "
+    stroke="#D8D8D8"
+    stroke-width="5"
+    stroke-linecap="round"
+    stroke-dasharray="6 10"
+  />
+
+  <!-- Diagonal path -->
+  <path
+    d="
+      M250 520
+      C450 480 630 350 880 110
+    "
+    stroke="#FFFFFF"
+    stroke-width="5"
+    stroke-linecap="round"
+    stroke-dasharray="8 10"
+  />
+
+</svg>
