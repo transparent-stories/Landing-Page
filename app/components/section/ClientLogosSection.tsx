@@ -111,7 +111,7 @@ export default function ClientLogosSection({
             grid
             grid-cols-2
             gap-x-8
-            gap-y-12
+            gap-y-4
             sm:grid-cols-3
             md:grid-cols-5
             items-center
@@ -137,11 +137,12 @@ export default function ClientLogosSection({
                   h-10
                   w-35
                   md:h-14
-                  md:w-45
-                  p-10
+                  md:w-80
+                  p-20
                   transition-all
                   duration-300
                   opacity-50
+                  grayscale-0
                   group-hover:opacity-70
                   group-hover:grayscale-0
                   group-hover:scale-105
