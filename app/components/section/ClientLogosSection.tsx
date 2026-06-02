@@ -3,7 +3,15 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { urlFor } from '@/lib/image'
-import { StaticImageData } from "next/image";
+
+type SanityImage = {
+  _type?: 'image'
+  alt?: string
+  asset?: {
+    _ref: string
+    _type: 'reference'
+  }
+}
 
 interface ClientLogosSectionProps {
   data: {
@@ -13,7 +21,7 @@ interface ClientLogosSectionProps {
     subtitle: string
 
     logos: {
-      logo: StaticImageData
+      logo: SanityImage
       alt: string
       link: string
     }[]
@@ -41,7 +49,6 @@ export default function ClientLogosSection({
         {/* Heading */}
         <div className="mx-auto max-w-6xl text-center">
 
-          {/* SEO H2 */}
           <h2
             className="
               mx-auto
@@ -57,6 +64,7 @@ export default function ClientLogosSection({
             "
           >
             {splitTitle?.[0]}
+
             <span
               className="
                 mx-2
@@ -70,12 +78,14 @@ export default function ClientLogosSection({
             >
               {data?.highlightText}
             </span>
-            <span className='block'>{data?.title_2}</span>
+
+            <span className="block">
+              {data?.title_2}
+            </span>
 
             {splitTitle?.[1]}
           </h2>
 
-          {/* Subtitle */}
           <p
             className="
               mx-auto
@@ -126,7 +136,7 @@ export default function ClientLogosSection({
                   relative
                   h-10
                   w-35
-                  md:h-13.75
+                  md:h-14
                   md:w-45
                   p-10
                   transition-all
@@ -137,17 +147,20 @@ export default function ClientLogosSection({
                   group-hover:scale-105
                 "
               >
-                <Image
-                  src={urlFor(item?.logo).url()}
-                  alt={item?.alt || 'Client logo'}
-                  fill
-                  className="object-cover grayscale brightness-25"
-                  sizes="(max-width: 768px) 140px, 180px"
-                />
+                {item?.logo && (
+                  <Image
+                    src={urlFor(item.logo).url()}
+                    alt={item?.alt || 'Client logo'}
+                    fill
+                    className="object-contain grayscale brightness-75"
+                    sizes="(max-width: 768px) 140px, 180px"
+                  />
+                )}
               </div>
             </Link>
           ))}
         </div>
+
       </div>
     </section>
   )

@@ -3,11 +3,11 @@ import { client } from './sanity'
 
 const builder = createImageUrlBuilder(client)
 
-type SanityImageSource = {
+export type SanityImageSource = {
   _type?: string
   asset?: {
     _ref: string
-    _type: 'reference'
+    _type: string
   }
 }
 
