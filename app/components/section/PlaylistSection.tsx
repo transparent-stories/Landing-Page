@@ -4,6 +4,14 @@ import Image from 'next/image'
 import { useRef, useState } from 'react'
 import { urlFor } from '@/lib/image'
 
+type SanityImage = {
+  alt?: string
+  asset?: {
+    _ref: string
+    _type: string
+  }
+}
+
 interface PlaylistAudio {
   title?: string
   description?: string
@@ -18,12 +26,7 @@ interface PlaylistSectionData {
   subtitle?: string
   remarkText?: string
 
-  mainImage?: {
-    alt?: string
-    asset?: {
-      _ref?: string
-    }
-  }
+  mainImage?: SanityImage
 
   audios?: PlaylistAudio[]
 }
