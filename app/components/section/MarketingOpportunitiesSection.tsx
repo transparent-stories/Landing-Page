@@ -41,7 +41,7 @@ export default function MarketingOpportunitiesSection({
 }: Props) {
   const { ref, isVisible } = useInView()
 
-  if (!data) return null
+  if (!data) return null;
 
   return (
     <section
