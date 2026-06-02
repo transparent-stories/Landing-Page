@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import DottedArrow from '../ui/DottedArrow'
 import Cloud from '../ui/Cloud'
+import Image from 'next/image'
 
 interface HeroSectionProps {
   data: {
@@ -192,8 +193,10 @@ export default function HeroSection({ data }: HeroSectionProps) {
           {/* Floating Labels */}
           <FloatingLabels />
 
-          <img
+          <Image
             src="/hero/folder.svg"
+            width={500}
+            height={500}
             alt="Marketing performance folder illustration"
             className="
               relative

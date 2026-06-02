@@ -111,9 +111,11 @@ export default function MarketingOpportunitiesSection({
         >
           {/* Dotted Arrows */}
 
-          <img
+          <Image
             src="/marketing-opportunities/arrowweb.svg"
             alt=""
+            width={500}
+            height={500}
             aria-hidden="true"
             className={`
               pointer-events-none
@@ -173,9 +175,11 @@ export default function MarketingOpportunitiesSection({
 
           {/* Kite */}
 
-          <img
+          <Image
             src="/marketing-opportunities/kite.svg"
             alt=""
+            width={500}
+            height={500}
             aria-hidden="true"
             className={`
               absolute
