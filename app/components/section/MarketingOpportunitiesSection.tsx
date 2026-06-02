@@ -17,6 +17,15 @@ interface OpportunityCardItem {
     | 'bottomRight'
 }
 
+type SanityImage = {
+  _type?: 'image'
+  alt?: string
+  asset: {
+    _ref: string
+    _type: 'reference'
+  }
+}
+
 interface MarketingOpportunitiesSectionData {
   titleBeforeHighlight?: string
   highlightText?: string
@@ -27,7 +36,7 @@ interface MarketingOpportunitiesSectionData {
   ctaText?: string
   ctaLink?: string
 
-  mainImage?: any
+  mainImage?: SanityImage
 
   cards?: OpportunityCardItem[]
 }

@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { urlFor } from '@/lib/image'
+import { StaticImageData } from "next/image";
 
 interface ClientLogosSectionProps {
   data: {
@@ -12,7 +13,7 @@ interface ClientLogosSectionProps {
     subtitle: string
 
     logos: {
-      logo: any
+      logo: StaticImageData
       alt: string
       link: string
     }[]
