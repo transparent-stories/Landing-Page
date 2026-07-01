@@ -17,6 +17,15 @@ interface OpportunityCardItem {
     | 'bottomRight'
 }
 
+type SanityImage = {
+  _type?: 'image'
+  alt?: string
+  asset: {
+    _ref: string
+    _type: 'reference'
+  }
+}
+
 interface MarketingOpportunitiesSectionData {
   titleBeforeHighlight?: string
   highlightText?: string
@@ -27,7 +36,7 @@ interface MarketingOpportunitiesSectionData {
   ctaText?: string
   ctaLink?: string
 
-  mainImage?: any
+  mainImage?: SanityImage
 
   cards?: OpportunityCardItem[]
 }
@@ -41,7 +50,7 @@ export default function MarketingOpportunitiesSection({
 }: Props) {
   const { ref, isVisible } = useInView()
 
-  if (!data) return null
+  if (!data) return null;
 
   return (
     <section
@@ -111,9 +120,11 @@ export default function MarketingOpportunitiesSection({
         >
           {/* Dotted Arrows */}
 
-          <img
+          <Image
             src="/marketing-opportunities/arrowweb.svg"
             alt=""
+            width={500}
+            height={500}
             aria-hidden="true"
             className={`
               pointer-events-none
@@ -173,9 +184,11 @@ export default function MarketingOpportunitiesSection({
 
           {/* Kite */}
 
-          <img
+          <Image
             src="/marketing-opportunities/kite.svg"
             alt=""
+            width={500}
+            height={500}
             aria-hidden="true"
             className={`
               absolute

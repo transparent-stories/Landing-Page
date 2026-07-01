@@ -4,11 +4,16 @@ import Image from 'next/image'
 import { urlFor } from '@/lib/image'
 import DottedArrow from '../ui/DottedArrow'
 
+type SanityImageAsset = {
+  _ref: string
+  _type: 'reference'
+}
+
 interface SatisfactionSectionProps {
   data: {
     mainImage: {
       alt?: string
-      asset: any
+      asset: SanityImageAsset
     }
 
     remarkText: string

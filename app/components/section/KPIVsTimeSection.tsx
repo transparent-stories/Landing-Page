@@ -3,6 +3,10 @@
 import Image from 'next/image'
 import { urlFor } from '@/lib/image'
 
+interface SanityImageAsset {
+  _ref: string
+  _type: 'reference'
+}
 interface KPIVsTimeSectionProps {
   data: {
     title: string
@@ -12,7 +16,7 @@ interface KPIVsTimeSectionProps {
 
     graphImage: {
       alt?: string
-      asset: any
+      asset: SanityImageAsset
     }
 
     infoCards: {

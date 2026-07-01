@@ -26,6 +26,7 @@ export async function getPage() {
         }
       },
       priorityTable,
-      marketingOpportunities
+      marketingOpportunities,
+      marketingPlan
   }`)
 }

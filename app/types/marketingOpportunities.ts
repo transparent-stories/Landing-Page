@@ -8,6 +8,11 @@ export interface OpportunityCard {
     | 'bottomRight'
 }
 
+type SanityImageAsset = {
+  _ref: string
+  _type: 'reference'
+}
+
 export interface MarketingOpportunitiesSectionData {
   titleBeforeHighlight?: string
   highlightText?: string
@@ -15,7 +20,7 @@ export interface MarketingOpportunitiesSectionData {
 
   subtitle?: string
 
-  mainImage?: any
+  mainImage?: SanityImageAsset
 
   ctaText?: string
   ctaLink?: string
