@@ -10,6 +10,7 @@ import KPIVsTimeSection from "./components/section/KPIVsTimeSection";
 import PlaylistSection from "./components/section/PlaylistSection";
 import PriorityTableSection from "./components/section/PriorityTableSection";
 import MarketingOpportunitiesSection from "./components/section/MarketingOpportunitiesSection";
+import MarketingPlanSection from "./components/section/MarketingPlanSection";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -47,6 +48,7 @@ export default async function RootLayout({
         <PlaylistSection data={pageData.playlistSection} />
         <PriorityTableSection data={pageData.priorityTable} />
         <MarketingOpportunitiesSection data={pageData.marketingOpportunities} />
+        <MarketingPlanSection data={pageData.marketingPlan} />
         {children}
       </body>
     </html>
