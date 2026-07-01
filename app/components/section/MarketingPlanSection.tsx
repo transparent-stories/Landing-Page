@@ -1,6 +1,6 @@
 'use client'
 
-import Image from 'next/image'
+import Image, {StaticImageData } from 'next/image'
 
 import { MarketingPlanCards } from '../ui/MarketingPlanCard'
 
@@ -26,7 +26,7 @@ interface MarketingPlanSectionProps {
     ctaText: string
     ctaLink: string
 
-    mainImage: any
+    mainImage: string | StaticImageData
 
     cards: MarketingPlanCard[]
   }
