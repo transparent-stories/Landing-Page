@@ -7,6 +7,22 @@ export async function getPage() {
       hero,
       clientLogos,
       satisfaction,
+      performanceCreative{
+        title,
+        highlightText,
+        title2,
+        subtitle,
+
+        leftIllustration,
+        rightIllustration,
+
+        videos[]{
+          caption,
+          thumbnail,
+
+          "videoUrl": video.asset->url
+        }
+      },
       kpivstime,
 
       playlistSection{
@@ -27,6 +43,7 @@ export async function getPage() {
       },
       priorityTable,
       marketingOpportunities,
-      marketingPlan
+      marketingPlan,
+      team
   }`)
 }

@@ -28,7 +28,7 @@ export default function PriorityTableSection({
   data,
 }: Props) {
   return (
-    <section className="bg-[#F7F6F3] py-24">
+    <section className="bg-[#F7F6F3] py-24" id="results">
       <div className="mx-auto max-w-7xl px-4">
 
         {/* HEADER */}

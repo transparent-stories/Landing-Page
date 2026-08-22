@@ -1,39 +1,68 @@
-import Image from "next/image"
-import { getPage } from "../lib/getPage"
+import { getPage } from '@/lib/getPage'
+
+import Header from './components/section/Header'
+import HeroSection from './components/section/HeroSection'
+import ClientLogosSection from './components/section/ClientLogosSection'
+import SatisfactionSection from './components/section/SatisfactionSection'
+import KPIVsTimeSection from './components/section/KPIVsTimeSection'
+import PlaylistSection from './components/section/PlaylistSection'
+import PriorityTableSection from './components/section/PriorityTableSection'
+import MarketingOpportunitiesSection from './components/section/MarketingOpportunitiesSection'
+import MarketingPlanSection from './components/section/MarketingPlanSection'
+import TeamSection from './components/section/TeamSection'
+import PerformanceCreativeSection from './components/section/PerformanceCreativeSection'
+import { getFooter } from '@/lib/getFooter'
+import FooterSection from './components/section/FooterSection'
 
 export default async function Home() {
-  const data = await getPage()
-
+  const pageData = await getPage()
+  const footerData = await getFooter()
+  
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        
-        {/* Example dynamic content */}
-        <div className="text-center sm:text-left">
-          <h1 className="text-4xl font-bold">
-            {data?.heroTitle}
-          </h1>
+    <>
+      <Header data={pageData.header} />
 
-          <p className="mt-4 text-lg text-zinc-600">
-            {data?.heroSubtitle}
-          </p>
+      <HeroSection data={pageData.hero} />
 
-          <button className="mt-6 px-6 py-3 bg-black text-white rounded-xl">
-            {data?.ctaText}
-          </button>
-        </div>
+      <ClientLogosSection
+        data={pageData.clientLogos}
+      />
 
-        {/* Keep your existing UI if you want */}
-        <Image
-          className="dark:invert mt-10"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
+      <SatisfactionSection
+        data={pageData.satisfaction}
+      />
+      
+      <PerformanceCreativeSection
+        data={pageData.performanceCreative}
+      />
 
-      </main>
-    </div>
+      <KPIVsTimeSection
+        data={pageData.kpivstime}
+      />
+
+      <PlaylistSection
+        data={pageData.playlistSection}
+      />
+
+      <PriorityTableSection
+        data={pageData.priorityTable}
+      />
+
+      <MarketingOpportunitiesSection
+        data={pageData.marketingOpportunities}
+      />
+
+      <MarketingPlanSection
+        data={pageData.marketingPlan}
+      />
+
+      <TeamSection
+        data={pageData.team}
+      />
+
+      <FooterSection 
+        data={footerData}
+      />
+    </>
   )
 }

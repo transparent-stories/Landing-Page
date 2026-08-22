@@ -139,13 +139,6 @@ export default function ClientLogosSection({
                   md:h-14
                   md:w-80
                   p-20
-                  transition-all
-                  duration-300
-                  opacity-50
-                  grayscale-0
-                  group-hover:opacity-70
-                  group-hover:grayscale-0
-                  group-hover:scale-105
                 "
               >
                 {item?.logo && (
@@ -153,7 +146,8 @@ export default function ClientLogosSection({
                     src={urlFor(item.logo).url()}
                     alt={item?.alt || 'Client logo'}
                     fill
-                    className="object-contain grayscale brightness-75"
+                    className="object-contain hover:grayscale-0 scale-100 hover:scale-105 
+                    grayscale brightness-75 opacity-50 hover:opacity-70 transition-all duration-300"
                     sizes="(max-width: 768px) 140px, 180px"
                   />
                 )}
